@@ -1,0 +1,16 @@
+//this is the old code from the rubytutorial.org guide
+
+<ul class="nav navbar-nav navbar-right">
+  <li><%= link_to "Home",   root_path %></li>
+  <li><%= link_to "Help",   help_path %></li>
+  <li><%= link_to "Log in", '#' %></li>
+</ul>
+
+//this is the modified code for the file. Links should still work but now it shows the active link highlighted.
+//http://stackoverflow.com/questions/9879169/how-to-get-twitter-bootstrap-navigation-to-show-active-link
+
+<ul class="nav navbar-nav navbar-right">
+  <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+  <li class="<%= 'active' if current_page?(help_path) %>"><%= link_to "Help", help_path %></li>
+  <li class="<%= 'active' if current_page?('#') %>"><%= link_to "Log in", '#' %></li>
+</ul>

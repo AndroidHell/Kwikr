@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionController::TestCase
+  
+  #Tests to see if routes work correctly - run 'bundle exec rake test'
 
   test "should get home" do
     get :home
