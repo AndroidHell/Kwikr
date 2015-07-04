@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails',                '4.2.2'
 gem 'bcrypt',               '3.1.7'
-gem 'bootstrap-sass',       '3.2.0.2' #fuck this guy
+
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt' #added becasue bcrypt was being flaky about users/1 - chapter 7
+
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails',           '>= 3.2'
 gem 'uglifier',             '2.5.3'
 gem 'coffee-rails',         '4.1.0'

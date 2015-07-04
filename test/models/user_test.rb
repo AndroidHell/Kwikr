@@ -58,4 +58,3 @@ class UserTest < ActiveSupport::TestCase
   
 end
 
-#test
