@@ -2,14 +2,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1 ">
 <meta name="HandheldFriendly" content="true">
 
+<script>
+  $(document).ready(function() {   
+      var sideslider = $('[data-toggle=collapse-side]');
+      var sel = sideslider.attr('data-target');
+      var sel2 = sideslider.attr('data-target-2');
+      sideslider.click(function(event){
+          $(sel).toggleClass('in');
+          $(sel2).toggleClass('out');
+      });
+  });
+
+//needed to get the dropdown working properly.  
+$(document).ready(function() {
+  $(".dropdown-toggle").dropdown();
+});
+  
+</script>
+
 <!-- Changed navbar from fixed to static. Was overlapping with body of page -->
-<header class="navbar navbar-static-top navbar-inverse">
+<header role="banner" class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header ">
+    <div class="navbar-header">
       <!-- When collapsed, makes a dropdown with hamburger button -->
-      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
+      <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -17,16 +34,35 @@
       <%= link_to "Kwikr", root_path, id: "logo" %>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <nav>
+    <div class="navbar-inverse side-collapse in pull-right">
+      <nav role="navigation" class="navbar-collapse">
         <!-- modified to show active links. Check _header.html.erb.txt for old code if needed -->
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
           <li class="<%= 'active' if current_page?(help_path) %>"><%= link_to "Help", help_path %></li>
-          <li class="<%= 'active' if current_page?('#') %>"><%= link_to "Log in", '#' %></li>
+          <!-- start of dynamic login menu - shows account if logged in, login if not logged in -->
+          <% if logged_in? %>
+            
+            <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Users", users_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Log out", logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+          <!-- ends dynamic login menu -->
         </ul>
       </nav>
     </div><!-- /.navbar-collapse -->
   </div>
 </header>
-
