@@ -2,30 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1 ">
 <meta name="HandheldFriendly" content="true">
 
-<script>
-$(document).ready(function() {   
-    var sideslider = $('[data-toggle=collapse-side]');
-    var sel = sideslider.attr('data-target');
-    var sel2 = sideslider.attr('data-target-2');
-    sideslider.click(function(event){
-        $(sel).toggleClass('in');
-        $(sel2).toggleClass('out');
-    });
-});
-
-//needed to get the dropdown working properly.  
-$(document).ready(function() {
-  $(".dropdown-toggle").dropdown();
-});
-
-//animated hamburger button - uses navbar-toggle so no need changing there.
-$(document).ready(function () {
-	  $(".navbar-toggle").on("click", function () {
-		    $(this).toggleClass("active");
-	  });
-});
-
-</script>
+<script type="text/javascript" src="javacripts/extras.js"></script>
 
 <!-- Changed navbar from fixed to static. Was overlapping with body of page -->
 <header role="banner" class="navbar navbar-fixed-top navbar-inverse">
