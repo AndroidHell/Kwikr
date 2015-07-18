@@ -1,16 +1,47 @@
-<div class="center jumbotron">
-  <h1>Welcome to Kwikr</h1>
+<script type="text/javascript">
+//affix script. Might try to move it to extras.js later
+//http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-affix.php
+$(document).ready(function(){
+    $("#myNav").affix();
+});
 
-  <h2>
-    This is where landing page would go ...if I had one!<br>
-    This site is based on the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+</script>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
-            
+<% if logged_in? %>
+
+  <div class="row">
+    
+    <aside class="col-md-4">
+      <div data-spy="affix" data-offset-top="0"> <!-- encapsulates the section in an affixed element -->
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+    </aside>
+    
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+  
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+
+    <h2>
+      This is the home page for the
+      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/' %>
+<% end %>

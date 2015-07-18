@@ -1,0 +1,49 @@
+Run options: --seed 59501
+
+# Running:
+
+EEEEE
+
+Finished in 0.024317s, 205.6148 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+MicropostTest#test_order_should_be_most_recent_first:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /home/ubuntu/workspace/Kwikr/test/fixtures/microposts.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+    
+
+
+  2) Error:
+MicropostTest#test_user_id_should_be_present:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /home/ubuntu/workspace/Kwikr/test/fixtures/microposts.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+    
+
+
+  3) Error:
+MicropostTest#test_content_should_be_at_most_140_characters:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /home/ubuntu/workspace/Kwikr/test/fixtures/microposts.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+    
+
+
+  4) Error:
+MicropostTest#test_should_be_valid:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /home/ubuntu/workspace/Kwikr/test/fixtures/microposts.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+    
+
+
+  5) Error:
+MicropostTest#test_content_sould_be_present:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /home/ubuntu/workspace/Kwikr/test/fixtures/microposts.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 7 column 3
+    
+
+5 runs, 0 assertions, 0 failures, 5 errors, 0 skips
+]2;[Minitest results] 5 tests
