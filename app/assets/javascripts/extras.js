@@ -23,3 +23,8 @@ $(document).ready(function () {
 	  });
 });
 
+//affix script. Might try to move it to extras.js later
+//http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-affix.php
+$(document).ready(function () {
+    $("#myNav").affix();
+});

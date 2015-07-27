@@ -91,6 +91,36 @@ p {
 /* header */
 
 #logo {
+  font-size: 26px;
+  color: #fff;
+  //text-transform: lowercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+#logo a {
+  color: #fff;
+  &:hover {
+    color: #297fb8;
+    text-decoration: none;
+  }
+}
+
+#logo a, a:visited, a:hover, a:active {
+    text-decoration:none;
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+/* old code for logo */
+/* #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -104,6 +134,16 @@ p {
     text-decoration: none;
   }
 }
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+} */
 
 /* footer */
 
@@ -166,6 +206,70 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.stats {
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+//This is needed for the bootstrap affix script to work
+
+.affix {
+  width: 360px;
+}
+
+@media (max-width: 1200px) {
+  .affix{ width: 293px; 
+    position: fixed;
+  }
+  .microposts{ 
+    width: 100%; 
+    
+  }
+}
+
+@media (max-width: 992px) {
+  .affix{ width: 100%; 
+    position: static;
+  }
+  .microposts{ 
+    width: 100%; 
+    
+  }
 }
 
 /* forms */
@@ -349,9 +453,4 @@ span.picture {
 
 /* nuclear testing */
 
-//This is needed for the bootstrap affix script to work
 
-
-.affix {
-  width: 360px;
-}
