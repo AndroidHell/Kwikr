@@ -13,9 +13,33 @@ $gray-light: #999;
   box-sizing:         border-box;
 }
 
+* {
+    margin: 0;
+}
+
 body {
       padding-top: 70px;
       position: relative;
+
+}
+
+body.welcome  {
+   background-image: url('street.jpg');
+   background-repeat: no-repeat;
+   background-attachment: static;
+   background-position: center;
+   //background-size: cover;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -20px; /* the bottom margin is the negative value of the footer's height */
 }
 
 pre {
@@ -81,11 +105,40 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $light-gray;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/* landing page */
+
+.btn-signup {
+  background-color: #222222;
+  border-color: #222222;
+  font-family: "Lato",Helvetica,Arial,sans-serif;
+  
+}
+
+a.btn-signup:hover{
+     background: #222222;
+}
+
+.padding{
+  padding-top:150px;
+}
+
+.jumbotron {
+  font-family: 'Oswald', sans-serif;
+}
+
+#jumbo {
+    /* IE8 and below */
+    background: rgb(2255, 255, 255);
+    /* all other browsers */
+    background: rgba(255, 255, 255, 0.75);
 }
 
 /* header */
@@ -148,10 +201,10 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: $light-gray;
+   /* IE8 and below */
+    background: rgb(2255, 255, 255);
+    /* all other browsers */
+    background: rgba(255, 255, 255, 0.50);
   a {
     color: #555;
     &:hover {
@@ -169,6 +222,10 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.footer, .push {
+    height: 20px; /* .push must be the same height as .footer */
 }
 
 /* sidebar */
@@ -391,20 +448,6 @@ span.picture {
   @include box_sizing;
 }
 
-/* testing high density explosives - turn back now */
-
-.homepaper {
-  background-image: url(ny_paper.jpg);
-  background-size: cover;
-}
-
-#jumbo {
-    /* IE8 and below */
-    background: rgb(255, 255, 255);
-    /* all other browsers */
-    background: rgba(255, 255, 255, 0.25);
-}
-
 /* hamburger */
 
 .navbar-toggle {
@@ -452,5 +495,4 @@ span.picture {
 }
 
 /* nuclear testing */
-
 
