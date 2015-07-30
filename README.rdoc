@@ -1,28 +1,56 @@
-== README
+=== README ===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the alpha phase for my little app. 
 
-Things you may want to cover:
+It's a hot mess and needs a lot of work done.
 
-* Ruby version
+For now the main eatures are there
 
-* System dependencies
+I will add more whe nI can but for now, it's fairly bare bones
 
-* Configuration
+--- Functionality ---
+User can create an account and log in.
+User needs a Gravatar account to be able to have profile pic
+User can post 140 char statuses and jpg png gif images
+User can follow people and can be followed
+User can view followed profile pages
+User sees their and their followed statuses in a DESC feed
+User can change password
 
-* Database creation
+--- Future functionaliy ---
+* post blogs, animated gifs, hashtags, @people
+* IRC chat
+* geotagging
+* editing statuses from feed
+* calendar
+* post youtube links
+* dark mode
+* webmail for proper contact page
+* PayPal donation page
 
-* Database initialization
 
-* How to run the test suite
+--- bugs ---
+* turbolinks breaks navbar collapse
+* jumbotron in about, contact, help stretches in mobile view
+* affix for sidebar twitches occasionally and doesn't catch on initial load in IE
+* landing page background resizes weird on screen resize
+* user logs into profile isntead of feed - dev tests fails if otherwise - fix dev tests
+* precompiling assets
+* Sprockets creates an eroor css page whenever the scss is edited at all. Need to delete or error shows up on website
 
-* Services (job queues, cache servers, search engines, etc.)
+--- Feedback ---
+Let me know - bugs, suggestions, fixes, forks, spoons?
 
-* Deployment instructions
+Spoons?
 
-* ...
+** I take donations in craft beer and 3rd wave coffee from snooty huipster cafes **
 
+NOTE: As it stands when I push from cloud 9 (the poor man's virtual IDE) I need to precompile assets;
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+bundle exec rake assets:precompile
+git add -A
+git commit -m "mesage"
+git push
+git push heroku master
+
+If I don;t do it this way, the latest commited CSS will not load to heroku. I don't know where this bug is or how to squash it.
