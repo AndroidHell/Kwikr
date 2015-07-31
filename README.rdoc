@@ -9,13 +9,13 @@ For now the main eatures are there
 I will add more whe nI can but for now, it's fairly bare bones
 
 --- Functionality ---
-User can create an account and log in.
-User needs a Gravatar account to be able to have profile pic
-User can post 140 char statuses and jpg png gif images
-User can follow people and can be followed
-User can view followed profile pages
-User sees their and their followed statuses in a DESC feed
-User can change password
+* User can create an account and log in.
+* User needs a Gravatar account to be able to have profile pic
+* User can post 140 char statuses and jpg png gif images
+* User can follow people and can be followed
+* User can view followed profile pages
+* User sees their and their followed statuses in a DESC feed
+* User can change password
 
 --- Future functionaliy ---
 * post blogs, animated gifs, hashtags, @people
@@ -39,18 +39,17 @@ User can change password
 * Sprockets creates an eroor css page whenever the scss is edited at all. Need to delete or error shows up on website
 
 --- Feedback ---
-Let me know - bugs, suggestions, fixes, forks, spoons?
-
-Spoons?
+* Let me know - bugs, suggestions, fixes, forks, spoons?
+* Spoons?
 
 ** I take donations in craft beer and 3rd wave coffee from snooty huipster cafes **
 
 NOTE: As it stands when I push from cloud 9 (the poor man's virtual IDE) I need to precompile assets;
 
-bundle exec rake assets:precompile
-git add -A
-git commit -m "mesage"
-git push
-git push heroku master
+* bundle exec rake assets:precompile
+* git add -A
+* git commit -m "mesage"
+* git push
+* git push heroku master
 
-If I don;t do it this way, the latest commited CSS will not load to heroku. I don't know where this bug is or how to squash it.
+If I don't do it this way, the latest commited CSS will not load to heroku. I don't know where this bug is or how to squash it.
