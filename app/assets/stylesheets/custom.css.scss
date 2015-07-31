@@ -33,6 +33,14 @@ body.gray  {
   background-color: #dedede;
 }
 
+.form-control, .btn-sharp {
+  border-radius:0;
+}
+
+.title-padding {
+  padding-top:4%;
+}
+
 html, body {
   height: 100%;
 }
@@ -136,7 +144,7 @@ a.btn-signup:hover{
 }
 
 .padding{
-  padding-top:11.3%;
+  padding-top:10%;
 }
 
 .jumbotron {
