@@ -4,8 +4,6 @@
 
 <script type="text/javascript" src="javacripts/extras.js"></script>
 
-
-
 <!-- Changed navbar from fixed to static. Was overlapping with body of page -->
 <header role="banner" class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
@@ -32,7 +30,7 @@
         <!-- modified to show active links. Check _header.html.erb.txt for old code if needed -->
         <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= 'active' if current_page?(help_path) %>"><%= link_to "Help", help_path %></li>
+          <li class="<%= 'active' if current_page?(irc_path) %>"><%= link_to "IRC", irc_path, target: '_blank' %></li>
           <!-- start of dynamic login menu - shows account if logged in, login if not logged in -->
           <% if logged_in? %>
             
@@ -51,7 +49,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Log in", login_path %></li>
+            <li class="<%= 'active' if current_page?(login_path) %>"><%= link_to "Log in", login_path %></li>
           <% end %>
           <!-- ends dynamic login menu -->
         </ul>

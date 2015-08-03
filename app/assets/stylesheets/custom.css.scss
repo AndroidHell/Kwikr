@@ -33,6 +33,10 @@ body.gray  {
   background-color: #dedede;
 }
 
+body.irc-gray  {
+  background-color: #DADADA;
+}
+
 .form-control, .btn-sharp {
   border-radius:0;
 }
@@ -173,6 +177,10 @@ a.btn-signup:hover{
   background-attachment: static;
   background-position: center;
 	-webkit-background-size: 100%;
+}
+
+.jumbotron-irc {
+  background-color: #EAEAEA;
 }
 
 #jumbo {
