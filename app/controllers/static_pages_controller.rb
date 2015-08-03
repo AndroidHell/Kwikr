@@ -18,4 +18,5 @@ class StaticPagesController < ApplicationController
   
   def irc
   end
+  
 end
