@@ -19,7 +19,6 @@ I will add more whe nI can but for now, it's fairly bare bones
 
 --- Future functionaliy ---
 * post blogs, animated gifs, hashtags, @people
-* IRC chat
 * geotagging
 * editing statuses from feed
 * calendar
