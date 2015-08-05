@@ -4,9 +4,9 @@ This is the alpha phase for my little app.
 
 It's a hot mess and needs a lot of work done.
 
-For now the main eatures are there
+For now the main features are there
 
-I will add more whe nI can but for now, it's fairly bare bones
+I will add more when I can but for now, it's fairly bare bones
 
 --- Functionality ---
 * User can create an account and log in.
@@ -41,9 +41,9 @@ I will add more whe nI can but for now, it's fairly bare bones
 * Let me know - bugs, suggestions, fixes, forks, spoons?
 * Spoons?
 
-** I take donations in craft beer and 3rd wave coffee from snooty huipster cafes **
+** I take donations in craft beer and 3rd wave coffee from snooty hipster cafes **
 
-NOTE: As it stands when I push from cloud 9 (the poor man's virtual IDE) I need to precompile assets;
+NOTE: As it stands when I push from cloud 9 to Heroku (the poor man's virtual IDE) I need to precompile assets;
 
 * bundle exec rake assets:precompile
 * git add -A
@@ -51,4 +51,4 @@ NOTE: As it stands when I push from cloud 9 (the poor man's virtual IDE) I need 
 * git push
 * git push heroku master
 
-If I don't do it this way, the latest commited CSS will not load to heroku. I don't know where this bug is or how to squash it.
+If I don't do it this way, the latest committed CSS will not load to heroku. I don't know where this bug is or how to squash it.
