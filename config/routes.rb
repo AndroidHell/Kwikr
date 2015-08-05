@@ -22,14 +22,15 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  
-  resources :links do 
+
+  resources :microposts do 
     member do
-      put "like", to: "links#upvote"
-      put "dislike", to: "links#downvote"
+      put "like", to: "microposts#upvote"
+      put "dislike", to: "microposts#downvote"
+      put "unvote", to: "microposts#unvote"
     end
   end
-  
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

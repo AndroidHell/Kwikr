@@ -16,13 +16,25 @@
                                        
     <% end %>
     <br>
-    <!-- vote system goes here -->
     
-     <%= link_to "like", micropost, method: :upvote,
-                                   data: { confirm: "You sure?" } %>
-     <%= link_to "dislike", micropost, method: :downvote,
-                                   data: { confirm: "You sure?" } %>
+    <!-- vote system goes here -->
+     <div>
+      <%= link_to like_micropost_path(micropost), method: :put do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Like
+        <%= micropost.get_upvotes.size %>
+      <% end %>
+      
+      
+      <%= link_to dislike_micropost_path(micropost), method: :put do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        Dislike
+        <%= micropost.get_downvotes.size %>
+      <% end %>
+    
+      <a> | comment(0) </a> 
+      
+    </div>
      
-     <a> comment(0) </a> 
   </span>
 </li>
