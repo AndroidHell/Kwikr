@@ -22,7 +22,14 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-   
+  
+  resources :links do 
+    member do
+      put "like", to: "links#upvote"
+      put "dislike", to: "links#downvote"
+    end
+  end
+  
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
