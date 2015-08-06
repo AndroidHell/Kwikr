@@ -9,6 +9,7 @@
 # see railstutorial.org Chapter 6.2 - 6.3
 
 class User < ActiveRecord::Base
+  acts_as_voter
   has_many :microposts, dependent: :destroy
   has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "follower_id",

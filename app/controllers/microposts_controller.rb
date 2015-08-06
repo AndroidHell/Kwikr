@@ -19,17 +19,30 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
   
-  def upvote 
+  def upvote
     @micropost = Micropost.find(params[:id])
-    @micropost.upvote_by current_user
-    redirect_to :back
-  end  
+    if current_user.voted_for? @micropost
+      @micropost.unliked_by current_user
+      redirect_to :back
+    else
+      @micropost.upvote_by current_user
+      
+      redirect_to :back
+    end
+  end
   
   def downvote
     @micropost = Micropost.find(params[:id])
-    @micropost.downvote_by current_user
-    redirect_to :back
+    if current_user.voted_for? @micropost
+      @micropost.unliked_by current_user
+      redirect_to :back
+    else
+      @micropost.downvote_by current_user
+      redirect_to :back
+    end
   end
+  
+
   
   private
     
@@ -40,12 +53,6 @@ class MicropostsController < ApplicationController
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
       redirect_to root_url if @micropost.nil?
-    end
-    
-    def unvote
-      @micropost = Micropost.find(params[:id])
-      @micropost.unvote_by current_user
-      redirect_to :back
     end
   
 end
