@@ -21,12 +21,46 @@ class MicropostsController < ApplicationController
   
   def upvote
     @micropost = Micropost.find(params[:id])
+    @micropost.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @micropost = Micropost.find(params[:id])
+    @micropost.downvote_by current_user
+    redirect_to :back
+  end
+
+  
+  def unvote
+    @micropost = Micropost.find(params[:id])
+    @micropost.unvote_by current_user
+    redirect_to :back
+  end
+  
+  private
+    
+    def micropost_params
+      params.require(:micropost).permit(:content, :picture)
+    end
+    
+    def correct_user
+      @micropost = current_user.microposts.find_by(id: params[:id])
+      redirect_to root_url if @micropost.nil?
+    end
+  
+end
+
+
+=begin
+
+  def upvote
+    @micropost = Micropost.find(params[:id])
     if current_user.voted_for? @micropost
       @micropost.unliked_by current_user
       redirect_to :back
     else
       @micropost.upvote_by current_user
-      
       redirect_to :back
     end
   end
@@ -42,17 +76,9 @@ class MicropostsController < ApplicationController
     end
   end
   
-
-  
-  private
-    
-    def micropost_params
-      params.require(:micropost).permit(:content, :picture)
-    end
-    
-    def correct_user
-      @micropost = current_user.microposts.find_by(id: params[:id])
-      redirect_to root_url if @micropost.nil?
-    end
-  
-end
+  def unvote
+    @micropost = Micropost.find(params[:id])
+    @micropost.unvote_by current_user
+    redirect_to :back
+  end
+=end
